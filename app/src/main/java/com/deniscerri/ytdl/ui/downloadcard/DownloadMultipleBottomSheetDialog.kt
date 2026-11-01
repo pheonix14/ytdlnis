@@ -103,6 +103,7 @@ class DownloadMultipleBottomSheetDialog : BottomSheetDialogFragment(), Configure
     private lateinit var count : TextView
     private lateinit var downloadBtn : MaterialButton
     private lateinit var scheduleBtn : MaterialButton
+    private lateinit var streamBtn : MaterialButton
     private lateinit var title: TextView
     private lateinit var subtitle: TextView
     private lateinit var shimmerTitle: ShimmerFrameLayout
@@ -188,6 +189,24 @@ class DownloadMultipleBottomSheetDialog : BottomSheetDialogFragment(), Configure
         }
 
         scheduleBtn = view.findViewById(R.id.bottomsheet_schedule_button)
+        streamBtn = view.findViewById(R.id.bottomsheet_stream_button)
+        val stoudEnabled = com.deniscerri.ytdl.stoud.StoudPreferences.isEnabled(requireContext())
+        streamBtn.visibility = if (stoudEnabled || com.deniscerri.ytdl.stoud.StoudPreferences.isConfigured(requireContext())) View.VISIBLE else View.GONE
+        streamBtn.setOnClickListener {
+            lifecycleScope.launch {
+                val checked = listAdapter.getCheckedItemsOrNull()
+                val items = withContext(Dispatchers.IO) {
+                    downloadViewModel.getProcessingDownloads(checked)
+                }
+                val pairs = items.map { it.url to it.title }
+                com.deniscerri.ytdl.stoud.StoudDialogHelper.showMultiStreamDialog(
+                    requireActivity(),
+                    pairs
+                ) {
+                    dismiss()
+                }
+            }
+        }
         downloadBtn = view.findViewById(R.id.bottomsheet_download_button)
         bottomAppBar = view.findViewById(R.id.bottomAppBar)
 
@@ -1124,6 +1143,7 @@ class DownloadMultipleBottomSheetDialog : BottomSheetDialogFragment(), Configure
         }
 
         scheduleBtn.isEnabled = !loading
+        streamBtn.isEnabled = !loading
         downloadBtn.isEnabled = !loading
         bottomAppBar.menu.children.forEach { m -> m.isEnabled = !loading }
     }

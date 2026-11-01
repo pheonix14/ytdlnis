@@ -1560,4 +1560,22 @@
         <item>open</item>
     </string-array>
 
+    <string-array name="stoud_quality_entries">
+        <item>Copy (Pass-through)</item>
+        <item>1080p</item>
+        <item>720p</item>
+        <item>480p</item>
+        <item>360p</item>
+        <item>Audio Only</item>
+    </string-array>
+
+    <string-array name="stoud_quality_values">
+        <item>copy</item>
+        <item>1080p</item>
+        <item>720p</item>
+        <item>480p</item>
+        <item>360p</item>
+        <item>audio_only</item>
+    </string-array>
+
 </resources>

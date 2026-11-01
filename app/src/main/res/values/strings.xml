@@ -714,4 +714,38 @@
     <string name="crop_unsupported">Cropping is not available for this item</string>
     <string name="press_cancel">Press here to cancel</string>
     <string name="fetching_data">Fetching data...</string>
+
+    <!-- Stoud Streamer Mode -->
+    <string name="stoud_streamer_mode">Streamer Mode (Stoud)</string>
+    <string name="stoud_streamer_summary">Stream directly to YouTube/Twitch live broadcasts via self-hosted Stoud engine</string>
+    <string name="stoud_enabled">Enable Streamer Mode</string>
+    <string name="stoud_enabled_summary">Show Streamer controls on download cards and quick action sheets</string>
+    <string name="stoud_server_url">Stoud Server URL</string>
+    <string name="stoud_server_url_summary">Address of your self-hosted Stoud instance (e.g. http://192.168.1.50:5000)</string>
+    <string name="stoud_api_token">API Token / Key</string>
+    <string name="stoud_api_token_summary">Optional Bearer token for protected reverse proxies</string>
+    <string name="stoud_quality">Stream Quality</string>
+    <string name="stoud_quality_summary">Quality preset passed to Stoud for live encoding</string>
+    <string name="stoud_custom_rtmp">Custom RTMP URL</string>
+    <string name="stoud_custom_rtmp_summary">Override default destination (e.g. rtmp://a.rtmp.youtube.com/live2/key)</string>
+    <string name="stoud_test_connection">Test Connection</string>
+    <string name="stoud_test_connection_summary">Ping Stoud server status endpoint</string>
+    <string name="stoud_open_monitor">Open Live Broadcast Monitor</string>
+    <string name="stoud_open_monitor_summary">View current live stream, queue, and playback controls</string>
+    <string name="stream_to_stoud">Stream to Stoud</string>
+    <string name="stream_now">Start Live Stream Now</string>
+    <string name="stream_queue_add">Add to Stream Queue</string>
+    <string name="stream_queue_cleared">Broadcast queue cleared</string>
+    <string name="stream_stopped">Live stream stopped</string>
+    <string name="stream_started">Broadcast started on Stoud!</string>
+    <string name="stream_added_to_queue">Added to broadcast queue</string>
+    <string name="stoud_not_configured">Stoud server URL is not configured. Please set your server address in Settings.</string>
+    <string name="stoud_connecting">Connecting to Stoud...</string>
+    <string name="stoud_status_live">LIVE BROADCASTING</string>
+    <string name="stoud_status_idle">IDLE (NO STREAM)</string>
+    <string name="stoud_queue_items">Queued Items (%d)</string>
+    <string name="stoud_no_queued_items">No items in broadcast queue</string>
+    <string name="stoud_stop_stream">Stop Broadcast</string>
+    <string name="stoud_clear_queue">Clear Queue</string>
+    <string name="stoud_refresh">Refresh Status</string>
 </resources>

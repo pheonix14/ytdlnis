@@ -135,6 +135,13 @@ class MainSettingsFragment : PreferenceFragmentCompat() {
             true
         }
 
+        val streamer = findPreference<Preference>("streamer")
+        streamer?.summary = getString(R.string.stoud_streamer_summary)
+        streamer?.setOnPreferenceClickListener {
+            navController.navigate(R.id.action_mainSettingsFragment_to_streamerSettingsFragment)
+            true
+        }
+
         //about section -------------------------
         updateUtil = UpdateUtil(requireContext())
 

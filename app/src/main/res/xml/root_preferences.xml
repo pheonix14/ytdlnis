@@ -31,6 +31,11 @@
         app:icon="@drawable/baseline_settings_suggest_24"
         android:title="@string/advanced"/>
 
+    <Preference
+        android:key="streamer"
+        app:icon="@drawable/baseline_live_tv_24"
+        android:title="@string/stoud_streamer_mode"/>
+
     <PreferenceCategory android:title="@string/backup_restore">
         <Preference
             app:icon="@drawable/baseline_save_alt_24"

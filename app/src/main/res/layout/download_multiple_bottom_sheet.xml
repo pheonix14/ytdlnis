@@ -111,6 +111,19 @@
                 app:layout_constraintTop_toBottomOf="@+id/bottom_sheet_title" />
 
             <Button
+                android:id="@+id/bottomsheet_stream_button"
+                style="@style/Widget.Material3.Button.IconButton.Filled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/stoud_streamer_mode"
+                android:outlineProvider="none"
+                app:icon="@drawable/baseline_live_tv_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/bottomsheet_schedule_button"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
                 android:id="@+id/bottomsheet_schedule_button"
                 style="@style/Widget.Material3.Button.IconButton.Filled"
                 android:layout_width="wrap_content"

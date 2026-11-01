@@ -45,9 +45,13 @@ jobs:
 
       - name: Configure Keystore & Properties
         run: |
-          echo "${{ secrets.BASE_64_SIGNING_KEY }}" | base64 -d > app/release_keystore.jks
+          if [ -n "${{ secrets.BASE_64_SIGNING_KEY }}" ]; then
+            echo "${{ secrets.BASE_64_SIGNING_KEY }}" | base64 -d > app/release_keystore.jks
+          fi
           touch local.properties
-          echo "${{ secrets.LOCAL_PROPERTIES }}" > keystore.properties
+          if [ -n "${{ secrets.LOCAL_PROPERTIES }}" ]; then
+            echo "${{ secrets.LOCAL_PROPERTIES }}" > keystore.properties
+          fi
           chmod +x gradlew
 
       # Build ONLY the specific flavor assigned to this matrix runner

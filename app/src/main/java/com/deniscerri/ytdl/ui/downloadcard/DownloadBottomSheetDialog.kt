@@ -83,6 +83,7 @@ class DownloadBottomSheetDialog : BottomSheetDialogFragment() {
     private lateinit var parentActivity: BaseActivity
 
     private lateinit var scheduleBtn: Button
+    private lateinit var streamBtn: Button
     private lateinit var downloadBtn: Button
 
 
@@ -316,6 +317,21 @@ class DownloadBottomSheetDialog : BottomSheetDialogFragment() {
             View.VISIBLE
         }else{
             View.GONE
+        }
+        streamBtn = view.findViewById(R.id.bottomsheet_stream_button)
+        val stoudEnabled = com.deniscerri.ytdl.stoud.StoudPreferences.isEnabled(requireContext())
+        streamBtn.visibility = if (stoudEnabled || com.deniscerri.ytdl.stoud.StoudPreferences.isConfigured(requireContext())) View.VISIBLE else View.GONE
+        streamBtn.setOnClickListener {
+            val item = runCatching { getDownloadItem() }.getOrNull()
+            val targetUrl = item?.url ?: result.url
+            val targetTitle = item?.title ?: result.title
+            com.deniscerri.ytdl.stoud.StoudDialogHelper.showStreamDialog(
+                requireActivity(),
+                targetUrl,
+                targetTitle
+            ) {
+                dismiss()
+            }
         }
         downloadBtn = view.findViewById<Button>(R.id.bottomsheet_download_button)
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        android:widgetLayout="@layout/preferece_material_switch"
+        app:defaultValue="false"
+        app:icon="@drawable/baseline_live_tv_24"
+        app:key="stoud_enabled"
+        app:summary="@string/stoud_enabled_summary"
+        app:title="@string/stoud_enabled" />
+
+    <PreferenceCategory
+        app:dependency="stoud_enabled"
+        app:title="@string/stoud_streamer_mode">
+
+        <EditTextPreference
+            app:icon="@drawable/ic_link"
+            app:key="stoud_server_url"
+            app:summary="@string/stoud_server_url_summary"
+            app:title="@string/stoud_server_url" />
+
+        <EditTextPreference
+            app:icon="@drawable/baseline_security_24"
+            app:key="stoud_api_token"
+            app:summary="@string/stoud_api_token_summary"
+            app:title="@string/stoud_api_token" />
+
+        <ListPreference
+            app:defaultValue="copy"
+            app:entries="@array/stoud_quality_entries"
+            app:entryValues="@array/stoud_quality_values"
+            app:icon="@drawable/baseline_high_quality_24"
+            app:key="stoud_quality"
+            app:summary="@string/stoud_quality_summary"
+            app:title="@string/stoud_quality" />
+
+        <EditTextPreference
+            app:icon="@drawable/ic_video"
+            app:key="stoud_custom_rtmp"
+            app:summary="@string/stoud_custom_rtmp_summary"
+            app:title="@string/stoud_custom_rtmp" />
+
+        <Preference
+            app:icon="@drawable/ic_update"
+            app:key="stoud_test_connection"
+            app:summary="@string/stoud_test_connection_summary"
+            app:title="@string/stoud_test_connection" />
+
+        <Preference
+            app:icon="@drawable/baseline_live_tv_24"
+            app:key="stoud_open_monitor"
+            app:summary="@string/stoud_open_monitor_summary"
+            app:title="@string/stoud_open_monitor" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/general">
+        <Preference
+            app:icon="@drawable/baseline_restore_page_24"
+            app:key="reset_preferences"
+            app:title="@string/reset_preferences" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

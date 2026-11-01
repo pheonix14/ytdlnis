@@ -73,7 +73,14 @@
         <action
             android:id="@+id/action_mainSettingsFragment_to_advancedSettingsFragment"
             app:destination="@id/advancedSettingsFragment" />
+        <action
+            android:id="@+id/action_mainSettingsFragment_to_streamerSettingsFragment"
+            app:destination="@id/streamerSettingsFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/streamerSettingsFragment"
+        android:name="com.deniscerri.ytdl.ui.more.settings.streamer.StreamerSettingsFragment"
+        android:label="StreamerSettingsFragment" />
     <fragment
         android:id="@+id/advancedSettingsFragment"
         android:name="com.deniscerri.ytdl.ui.more.settings.advanced.AdvancedSettingsFragment"
