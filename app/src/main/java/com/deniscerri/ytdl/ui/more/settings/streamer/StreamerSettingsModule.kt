@@ -118,7 +118,7 @@ object StreamerSettingsModule : SettingModule {
             }
             "stoud_open_monitor" -> {
                 pref.setOnPreferenceClickListener {
-                    val activity = host.getHostActivity()
+                    val activity = host.getHostContext()
                     StoudDialogHelper.openMonitor(activity)
                     true
                 }
