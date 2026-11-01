@@ -59,7 +59,7 @@
         <Preference
             app:icon="@drawable/baseline_restore_page_24"
             app:key="reset_preferences"
-            app:title="@string/reset_preferences" />
+            app:title="@string/reset" />
     </PreferenceCategory>
 
 </PreferenceScreen>
